@@ -11,6 +11,14 @@
                     <p><strong>pages : </strong> {{$book->pages}}</p>
                     <p><strong>price : </strong> {{$book->price}}</p>
                     <p><strong>Publish Date : </strong> {{$book->published_at}}</p>
+                    <p><strong>User : </strong> {{$book->user->name}}</p>
+
+                    <strong>Categories : </strong>
+                    @foreach($book->categories as $category)
+                        <em>
+                            {{$category->name.','}}
+                        </em>
+                    @endforeach
                 </div>
             </div>
             <div>

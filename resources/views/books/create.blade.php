@@ -36,8 +36,17 @@
                                id="published_at"
                                placeholder="Enter publish date">
                     </div>
+                    <div class="form-group">
+                        <label for="category">Category</label>
+                        <select name="category_id[]" id="category" class="form-control" multiple>
+                            @foreach($categories as $category)
+                                <option value="{{$category->id}}">{{$category->name}}</option>
+                            @endforeach
+                        </select>
+
+                    </div>
                     <button type="submit" class="btn btn-success">Save</button>
-                    @include('books\validation_error')
+                    @include('books.validation_error')
                 </form>
             </div>
         </div>
