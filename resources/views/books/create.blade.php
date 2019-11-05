@@ -37,6 +37,15 @@
                                placeholder="Enter publish date">
                     </div>
                     <div class="form-group">
+                        <label for="author">Author</label>
+                        <select name="author_id[]" id="author" class="form-control" multiple>
+                            @foreach($authors as $author)
+                                <option value="{{$author->id}}">{{$author->name}}</option>
+                            @endforeach
+                        </select>
+
+                    </div>
+                    <div class="form-group">
                         <label for="category">Category</label>
                         <select name="category_id[]" id="category" class="form-control" multiple>
                             @foreach($categories as $category)

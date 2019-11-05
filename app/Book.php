@@ -22,4 +22,7 @@ class Book extends Model
     public function categories(){
         return $this->belongsToMany(Category::class)->withTimestamps();
     }
+    public function authors(){
+        return $this->belongsToMany(Author::class)->withTimestamps();
+    }
 }

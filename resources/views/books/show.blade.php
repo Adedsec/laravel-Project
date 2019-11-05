@@ -12,13 +12,26 @@
                     <p><strong>price : </strong> {{$book->price}}</p>
                     <p><strong>Publish Date : </strong> {{$book->published_at}}</p>
                     <p><strong>User : </strong> {{$book->user->name}}</p>
+                    <div>
+                        <strong>Authors : </strong>
+                        @foreach($book->authors as $author)
+                            <em>
+                                {{$author->name.','}}
+                            </em>
+                        @endforeach
 
-                    <strong>Categories : </strong>
-                    @foreach($book->categories as $category)
-                        <em>
-                            {{$category->name.','}}
-                        </em>
-                    @endforeach
+                    </div>
+
+                    <div class="mt-3">
+
+                        <strong>Categories : </strong>
+                        @foreach($book->categories as $category)
+                            <em>
+                                {{$category->name.','}}
+                            </em>
+                        @endforeach
+                    </div>
+
                 </div>
             </div>
             <div>

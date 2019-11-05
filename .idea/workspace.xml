@@ -5,10 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Book.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_10_17_093236_create_books_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_10_17_093236_create_books_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_04_175213_create_authors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_04_175213_create_authors_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/books/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/books/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/books/show.blade.php" afterDir="false" />
     </list>
@@ -170,7 +167,8 @@
       <workItem from="1571502125241" duration="5159000" />
       <workItem from="1571651696840" duration="8418000" />
       <workItem from="1571743186057" duration="1027000" />
-      <workItem from="1572885986121" duration="4146000" />
+      <workItem from="1572885986121" duration="4530000" />
+      <workItem from="1572949141059" duration="2660000" />
     </task>
     <servers />
   </component>
