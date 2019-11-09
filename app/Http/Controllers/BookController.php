@@ -13,7 +13,7 @@ class BookController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only('create');
+        $this->middleware('auth')->only(['create','edit']);
     }
 
     public function index()
@@ -43,6 +43,28 @@ class BookController extends Controller
         $book=Auth::user()->books()->create($request->except('_token'));
         $book->categories()->attach($request->get('category_id'));
         $book->authors()->attach($request->get('author_id'));
+        return redirect('/books');
+    }
+
+    public function edit($id)
+    {
+        $book=Book::find($id);
+        $categories=Category::all();
+        $authors=Author::all();
+        return view('books.edit',compact('book','categories','authors'));
+    }
+
+    public function update(Request $request,$id)
+    {
+        //find
+        $book=Book::find($id);
+        //update book
+        $book->update($request->only(['name','price','pages','ISBN','published_at']));
+        //update authors
+        $book->authors()->sync($request->get('author_id'));
+        //update categories
+        $book->categories()->sync($request->get('category_id'));
+
         return redirect('/books');
     }
 }

@@ -22,6 +22,8 @@ Route::get('/books', 'BookController@index')->name('indexRoute');
 Route::post('/books/', 'BookController@store')->name('storeRoute');
 Route::get('books/create', 'BookController@create')->name('createRoute');
 Route::get('/books/{id}', 'BookController@show')->name('showRoute');
+Route::get('/books/{id}/edit','BookController@edit')->name('editRoute');
+Route::patch('/books/{id}','BookController@update')->name('updateRoute');
 
 
 Auth::routes();
