@@ -21,9 +21,13 @@ Route::get('/', function () {
 Route::get('/books', 'BookController@index')->name('indexRoute');
 Route::post('/books/', 'BookController@store')->name('storeRoute');
 Route::get('books/create', 'BookController@create')->name('createRoute');
+Route::post('/books/add-category','BookController@addCategory')->name('addCategoryRoute');
+Route::post('/books/add-author','BookController@addAuthor')->name('addAuthorRoute');
+Route::get('/books/management','BookController@management')->name('managementRoute');
 Route::get('/books/{id}', 'BookController@show')->name('showRoute');
 Route::get('/books/{id}/edit','BookController@edit')->name('editRoute');
 Route::patch('/books/{id}','BookController@update')->name('updateRoute');
+
 
 
 Auth::routes();

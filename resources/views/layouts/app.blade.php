@@ -48,6 +48,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('createRoute') }}">{{ __('Create Book') }}</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('managementRoute') }}">{{ __('Management') }}</a>
+                        </li>
                     @endauth
 
                 </ul>

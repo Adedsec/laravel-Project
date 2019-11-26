@@ -13,7 +13,7 @@ class BookController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->only(['create','edit']);
+        $this->middleware('auth')->only(['create', 'edit', 'management']);
     }
 
     public function index()
@@ -25,22 +25,22 @@ class BookController extends Controller
 
     public function show($id)
     {
-        $book = Book::with(['categories','authors'])->findOrFail($id);
+        $book = Book::with(['categories', 'authors'])->findOrFail($id);
         return view('books/show', compact('book'));
     }
 
     public function create()
     {
-        $categories=Category::all();
-        $authors=Author::all();
-        return view('books.create',compact('categories','authors'));
+        $categories = Category::all();
+        $authors = Author::all();
+        return view('books.create', compact('categories', 'authors'));
     }
 
     public function store(BookStoreRequest $request)
     {
 
         //$book = Book::create($request->except('_token'));
-        $book=Auth::user()->books()->create($request->except('_token'));
+        $book = Auth::user()->books()->create($request->except('_token'));
         $book->categories()->attach($request->get('category_id'));
         $book->authors()->attach($request->get('author_id'));
         return redirect('/books');
@@ -48,23 +48,41 @@ class BookController extends Controller
 
     public function edit($id)
     {
-        $book=Book::find($id);
-        $categories=Category::all();
-        $authors=Author::all();
-        return view('books.edit',compact('book','categories','authors'));
+        $book = Book::find($id);
+        $categories = Category::all();
+        $authors = Author::all();
+        $this->authorize('update', $book);
+        return view('books.edit', compact('book', 'categories', 'authors'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         //find
-        $book=Book::find($id);
+        $book = Book::find($id);
         //update book
-        $book->update($request->only(['name','price','pages','ISBN','published_at']));
+        $book->update($request->only(['name', 'price', 'pages', 'ISBN', 'published_at']));
         //update authors
         $book->authors()->sync($request->get('author_id'));
         //update categories
         $book->categories()->sync($request->get('category_id'));
 
         return redirect('/books');
+    }
+
+    public function addCategory(Request $request)
+    {
+        Category::create($request->except('_token'));
+        return redirect('/books');
+    }
+
+    public function addAuthor(Request $request)
+    {
+        Author::create($request->except('_token'));
+        return redirect('/books');
+    }
+
+    public function management()
+    {
+        return view('books.managment');
     }
 }

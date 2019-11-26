@@ -39,9 +39,14 @@
                                 <td>
                                     <p>{{$book->published_at}}</p>
                                 </td>
-                                <td>
-                                    <a href="{{Route('editRoute',['id'=>$book->id])}}" class="btn btn-primary">Edit</a>
-                                </td>
+                                @can('update',$book)
+                                    <td>
+                                         <a href="{{Route('editRoute',['id'=>$book->id])}}" class="btn btn-primary">Edit</a>
+                                    </td>
+                                @else
+                                    <td></td>
+                                @endcan
+
                             </tr>
 
                         @endforeach
