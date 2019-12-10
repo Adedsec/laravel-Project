@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Author;
 use App\Book;
 use App\Category;
+use App\Events\BookCreatedEvent;
 use App\Http\Requests\BookStoreRequest;
 use App\Mail\BookCreated;
 use Illuminate\Http\Request;
@@ -46,9 +47,7 @@ class BookController extends Controller
         $book = Auth::user()->books()->create($request->except('_token'));
         $book->categories()->attach($request->get('category_id'));
         $book->authors()->attach($request->get('author_id'));
-        Mail::to(Auth::user())->send(new BookCreated($book));
-        $client = new KavenegarApi(env("KAVEH_NEGAR_API_KEY"));
-        $client->Send(env("SENDER_MOBILE"), env("RECIVER_MOBILE"), "hello from aref");
+        event(new BookCreatedEvent($book));
         return redirect('/books');
     }
 
