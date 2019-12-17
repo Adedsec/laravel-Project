@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92bcca92-9f8c-488b-8f48-d6eca1de758b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/books/managment.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/emails/users/registered.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravelproject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravelproject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Author.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Author.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Events/BookCreatedEvent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/BookCreatedEvent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendAdminSms.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/BookCreatedSendUserSms.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendUserEmail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/BookCreatedSendUserEmail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Mail/BookCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/BookCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/books/created.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/books/created.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,12 +119,14 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/php" />
+      <path value="$PROJECT_DIR$/vendor/kavenegar/laravel" />
     </include_path>
   </component>
   <component name="ProjectId" id="1SKFwlgB1NLaoSlTbAf3dG47EYM" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../startlaravel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
@@ -173,6 +181,7 @@
       <workItem from="1573307685845" duration="5112000" />
       <workItem from="1573466866977" duration="3126000" />
       <workItem from="1573483036630" duration="656000" />
+      <workItem from="1576565180315" duration="5252000" />
     </task>
     <servers />
   </component>

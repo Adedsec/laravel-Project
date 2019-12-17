@@ -9,6 +9,6 @@
 <body>
 Hi {{$user->name}}
 <br>
-your {{$book->name}} Book Created
+WellCome To BookStore
 </body>
 </html>

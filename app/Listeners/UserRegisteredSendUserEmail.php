@@ -2,12 +2,13 @@
 
 namespace App\Listeners;
 
-use App\Events\BookCreatedEvent;
+use App\Events\UserRegisteredEvent;
+use App\Mail\UserRegistered;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Kavenegar\KavenegarApi;
+use Illuminate\Support\Facades\Mail;
 
-class SendAdminSms
+class UserRegisteredSendUserEmail implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -22,12 +23,11 @@ class SendAdminSms
     /**
      * Handle the event.
      *
-     * @param  BookCreatedEvent  $event
+     * @param UserRegisteredEvent $event
      * @return void
      */
-    public function handle(BookCreatedEvent $event)
+    public function handle(UserRegisteredEvent $event)
     {
-        $client = new KavenegarApi(env("KAVEH_NEGAR_API_KEY"));
-        $client->Send(env("SENDER_MOBILE"), env("RECIVER_MOBILE"), "hello from aref");
+        Mail::to($event->user)->send(new UserRegistered($event->user));
     }
 }

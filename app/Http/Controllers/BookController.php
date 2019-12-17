@@ -47,7 +47,7 @@ class BookController extends Controller
         $book = Auth::user()->books()->create($request->except('_token'));
         $book->categories()->attach($request->get('category_id'));
         $book->authors()->attach($request->get('author_id'));
-        event(new BookCreatedEvent($book));
+        event(new BookCreatedEvent($book, Auth::user()));
         return redirect('/books');
     }
 

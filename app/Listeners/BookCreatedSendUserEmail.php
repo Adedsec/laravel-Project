@@ -10,7 +10,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
-class SendUserEmail
+class BookCreatedSendUserEmail implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -25,12 +25,13 @@ class SendUserEmail
     /**
      * Handle the event.
      *
-     * @param  BookCreatedEvent  $event
+     * @param BookCreatedEvent $event
      * @return void
      */
     public function handle(BookCreatedEvent $event)
     {
         $book = $event->book;
-        Mail::to(Auth::user())->send(new BookCreated($book));
+        $user = $event->user;
+        Mail::to($user)->send(new BookCreated($book, $user));
     }
 }

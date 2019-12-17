@@ -2,7 +2,6 @@
 
 namespace App\Events;
 
-use App\Book;
 use App\User;
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
@@ -12,22 +11,19 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class BookCreatedEvent
+class UserRegisteredEvent
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
-    public $book;
     public $user;
 
     /**
      * Create a new event instance.
      *
-     * @param Book $book
      * @param User $user
      */
-    public function __construct(Book $book, User $user)
+    public function __construct(User $user)
     {
-        $this->book = $book;
         $this->user = $user;
     }
 
